@@ -12,7 +12,7 @@
         content: "";
         position: absolute;
         inset: 0;
-        background-image: url("/media/banner-hero.png");
+        background-image: url("./media/banner-hero.png");
         background-size: cover;
         background-position: center;
         background-color: color-mix(in srgb, var(--color-surface) 90%, transparent);
