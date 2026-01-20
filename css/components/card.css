@@ -1,0 +1,92 @@
+.card {
+    --card-background-color: var(--color-surface);
+    --card-accent: var(--color-on-surface);
+    --card-shadow: 0 8px 28px color-mix(in srgb, var(--card-accent) 5%, transparent 95%);
+    --card-translate: 0;
+
+    --card-title-color: var(--card-accent);
+    --card-subtitle-color: color-mix(in oklch, var(--card-accent) calc(100% - var(--opacity-very-weak) * 100%), transparent);
+    --card-body-color: color-mix(in oklch, var(--color-on-surface) calc(100% - var(--opacity-very-weak) * 100%), transparent);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding: var(--space-6);
+    background-color: var(--card-background-color);
+    box-shadow: var(--card-shadow);
+    transform: translateY(var(--card-translate));
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--card-border-color);
+
+    transition:
+        box-shadow var(--duration-normal) var(--ease-standard),
+        transform var(--duration-normal) var(--ease-standard),
+        background-color var(--duration-normal) var(--ease-standard),
+        border-color var(--duration-normal) var(--ease-standard);
+
+    &.card--secondary {
+        --card-background-color: var(--color-surface-secondary);
+        --card-accent: var(--color-on-surface-secondary);
+    }
+
+    &.card--outlined {
+        --card-border-color: color-mix(in oklch, var(--card-accent) 24%, transparent);
+    }
+
+    &.card--clickable {
+        cursor: pointer;
+    }
+
+    &:hover,
+    &:focus-within {
+        --card-shadow: var(--shadow-md);
+        --card-translate: -2px;
+    }
+
+    &[data-variant="critical"] {
+        --card-accent: var(--color-accent-critical);
+    }
+
+    &[data-variant="caution"] {
+        --card-accent: var(--color-accent-caution);
+    }
+
+    &[data-variant="assured"] {
+        --card-accent: var(--color-accent-assured);
+    }
+
+    &[data-variant="positive"] {
+        --card-accent: var(--color-accent-positive);
+    }
+
+    .card__title {
+        font-size: var(--font-size-lg);
+        font-weight: var(--font-weight-semi-bold);
+        color: var(--card-title-color);
+    }
+
+    .card__subtitle {
+        font-size: var(--font-size-md);
+        font-weight: var(--font-weight-semi-bold);
+        color: var(--card-subtitle-color);
+    }
+
+    .card__body {
+        max-width: 80ch;
+        margin-top: var(--space-2);
+
+        font-size: var(--font-size-md);
+        color: var(--card-body-color);
+        text-wrap: balance;
+    }
+
+    .card__link {
+        font-weight: var(--font-weight-semibold);
+        color: inherit;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

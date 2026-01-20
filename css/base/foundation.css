@@ -1,0 +1,78 @@
+/* Headings */
+h1 {
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-normal);
+    color: var(--color-on-background);
+}
+
+h2 {
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-normal);
+    color: var(--color-on-background);
+}
+
+h3 {
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-normal);
+    color: var(--color-on-background);
+}
+
+/* Paragraphs */
+p {
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-loose);
+    color: var(--color-on-background);
+}
+
+/* Links */
+a {
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-regular);
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--duration-normal) var(--ease-standard);
+}
+
+a:hover,
+a:focus {
+    color: var(--color-primary);
+}
+
+/* Buttons */
+button {
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-md);
+    cursor: pointer;
+    transition: background-color var(--duration-normal) var(--ease-standard),
+        color var(--duration-normal) var(--ease-standard);
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+/* Base body styles */
+html,
+body {
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-loose);
+    font-weight: var(--font-weight-regular);
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+}
+
+/* Address */
+address {
+    font-style: normal;
+}

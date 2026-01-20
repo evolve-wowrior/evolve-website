@@ -1,0 +1,24 @@
+.topbar {
+    --topbar-opacity: var(--opacity-full);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: var(--height-sm);
+    display: flex;
+    align-items: center;
+    background-color: color-mix(in oklch, var(--color-surface) calc(100% - var(--topbar-opacity)*100%), transparent);
+    padding-inline: var(--space-6);
+    z-index: var(--z-sticky);
+    box-shadow: var(--shadow-sm);
+
+    &.topbar--scrolled {
+        --topbar-opacity: var(--opacity-very-weak);
+    }
+
+    .topbar__logo {
+        height: var(--height-xs);
+
+    }
+}

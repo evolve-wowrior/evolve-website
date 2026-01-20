@@ -1,0 +1,23 @@
+.stack,
+.inline {
+    display: flex;
+    gap: var(--space-4);
+}
+
+.stack {
+    flex-direction: column;
+
+    &[class*="-reverse"] {
+        flex-direction: column-reverse;
+    }
+}
+
+.inline {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    &[class*="-reverse"] {
+        flex-direction: row-reverse;
+    }
+}

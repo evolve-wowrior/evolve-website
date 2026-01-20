@@ -1,0 +1,49 @@
+.hero-section {
+    --section-text-color: var(--color-on-surface);
+
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-block: var(--space-10);
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("/media/banner-hero.png");
+        background-size: cover;
+        background-position: center;
+        background-color: color-mix(in srgb, var(--color-surface) 90%, transparent);
+        background-blend-mode: lighten;
+    }
+
+    &>.container {
+        z-index: var(--z-base);
+    }
+
+    .hero-section__header {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-2);
+    }
+
+    .hero-section__title {
+        font-weight: var(--font-weight-semi-bold);
+        max-width: 60ch;
+        font-size: clamp(1.5rem, 6vw, 3rem);
+    }
+
+    .hero-section__description {
+        max-width: 60ch;
+        font-size: var(--font-size-lg);
+        color: color-mix(in oklch, var(--section-text-color) calc(100% - var(--opacity-very-weak)*100%), transparent);
+        text-wrap: balance;
+        margin-block: var(--space-4) var(--space-8);
+    }
+
+    .hero-section__text-highlighted {
+        color: var(--color-primary);
+    }
+}

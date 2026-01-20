@@ -1,0 +1,23 @@
+.footer {
+    --text-color: color-mix(in oklch, var(--color-on-surface) calc(100% - var(--opacity-light)*100%), transparent);
+
+    background: var(--color-surface-secondary);
+    padding-block: var(--space-4);
+
+    &>.container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: var(--space-2);
+    }
+
+    & p {
+        color: var(--text-color);
+    }
+
+    .footer__logo {
+        height: var(--height-sm);
+        padding: var(--space-2)
+    }
+}

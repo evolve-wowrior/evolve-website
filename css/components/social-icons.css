@@ -1,0 +1,18 @@
+.social-icons {
+    --text-color: color-mix(in oklch, var(--color-on-surface) 60%, transparent);
+
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+
+    & a {
+        color: var(--text-color);
+        text-decoration: none;
+        transition: color var(--duration-fast) var(--ease-standard);
+
+        &:hover,
+        &:focus {
+            color: var(--color-on-surface);
+        }
+    }
+}

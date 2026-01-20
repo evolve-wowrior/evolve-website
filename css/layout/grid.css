@@ -1,0 +1,93 @@
+/* [class*="grid"] {
+    display: grid;
+    gap: var(--space-4);
+
+    &.grid-fit {
+        grid-template-columns: repeat(auto-fit, minmax(var(--width-xl), 1fr));
+    }
+
+    &.grid-fill {
+        grid-template-columns: repeat(auto-fill, minmax(var(--width-xl), 1fr));
+    }
+
+    &.grid-center {
+        place-items: center;
+    }
+} */
+
+/* [class*="grid"] {
+    display: grid;
+    gap: var(--space-4);
+
+    &.grid-fit {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--width-xl)), 1fr));
+    }
+
+    &.grid-fill {
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--width-xl)), 1fr));
+    }
+
+    &.grid-center {
+        place-items: center;
+    }
+} */
+
+[class*="grid"] {
+    display: grid;
+    gap: clamp(1rem, 2vw, 1.5rem);
+    /* 1. Ensure the grid row tracks all have equal height */
+    grid-auto-rows: 1fr;
+    align-items: stretch;
+
+    &.grid-fit,
+    &.grid-fill {
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+        justify-content: center;
+    }
+
+    &.grid-balanced {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        /* Critical for Flex equal height */
+
+        &>* {
+            flex: 1 1 16rem;
+            max-width: 100;
+            display: flex;
+            /* Make the wrapper a flex container */
+        }
+    }
+
+    /* 2. THE FIX: Force content to fill the stretched cell */
+    &>* {
+        display: flex;
+        flex-direction: column;
+        /* Instead of height: 100%, use flex-grow to fill the grid cell */
+        flex: 1 1 auto;
+    }
+}
+
+/* 3. ALIGN INTERNAL BUTTONS (Optional but recommended) */
+/* If your card has a button, this pushes it to the bottom */
+[class*="grid"]>*>.content-body {
+    flex-grow: 1;
+}
+
+
+/* 
+/* Tablet Override for Balanced Grid */
+@media (min-width: 768px) and (min-height: 600px) {
+    [class*="grid"].grid-balanced>* {
+        max-width: 100%;
+        /* 2 per row on iPad */
+    }
+}
+
+@media (min-width: 1280px) and (hover: hover) {
+    [class*="grid"].grid-balanced>* {
+        max-width: 33.33%;
+        /* 2 per row on iPad */
+    }
+}
