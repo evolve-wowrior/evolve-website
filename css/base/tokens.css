@@ -10,7 +10,7 @@
       --color-on-surface-secondary: #202124;
 
       /* Buttons, links colors */
-      --color-primary: #1A73E8;
+      --color-primary: #295FF4;
       --color-on-primary: #FFFFFF;
       --color-secondary: #202124;
       --color-on-secondary: #FFFFFF;
@@ -32,7 +32,7 @@
 
       --color-accent-critical: #DC1635;
       --color-accent-caution: #F28F1C;
-      --color-accent-assured: #1A73E8;
+      --color-accent-assured: #295FF4;
       --color-accent-positive: #059669;
 
       /* Fonts */
